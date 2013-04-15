@@ -1,0 +1,14 @@
+doctype 5
+html
+	head
+		title= title
+		link(rel='stylesheet', href='/css/bootstrap.min.css')
+		block scripts
+			script(type="text/javascript", src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+			script(type="text/javascript", src="//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.10/socket.io.min.js")
+			script(type="text/javascript", src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js")
+
+	body
+		block content
+		block log
+			div#karmaLog

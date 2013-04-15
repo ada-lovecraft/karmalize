@@ -1,0 +1,13 @@
+extends layout
+
+append scripts
+	script(type="text/javascript", src="js/karma.js")
+
+
+block content
+	div.hero-unit#hero(data-karmaid='#{karma.id}',data-karmaname='#{karma.name}', data-karma="#{karma.score}", data-action="#{karma.action}")
+	h1= karma.name
+	p#score= karma.score
+	p#summary= karma.summary
+	button#upvote like
+	button#downvote dislike
