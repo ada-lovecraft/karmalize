@@ -3,12 +3,31 @@ html
 	head
 		title= title
 		link(rel='stylesheet', href='/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/css/style.css')
+
 		block scripts
 			script(type="text/javascript", src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js")
+			script(type="text/javascript", src="/js/bootstrap.js")
 			script(type="text/javascript", src="//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.10/socket.io.min.js")
 			script(type="text/javascript", src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js")
 
 	body
-		block content
-		block log
-			div#karmaLog
+		block nav
+		div.navbar.navbar-inverse.navbar-fixed-top
+			div.navbar-inner
+				div.container
+					button.btn.btn-navbar(data-toggle="collapse", data-target=".nav-collapse")
+						span.icon-bar  
+						span.icon-bar  
+						span.icon-bar   
+					a.brand(href="#") Karmalize
+					div.nav-collapse.collapse
+						ul.nav
+							li 
+								a(href="#") Home
+							li 
+								a(href="#") About
+							li 
+								a(href="#") Contact
+		div.container
+			block content

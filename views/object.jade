@@ -4,10 +4,44 @@ append scripts
 	script(type="text/javascript", src="js/karma.js")
 
 
-block content
+append content
+	div.hero-unit#parents
+		div.carousel.slide#myCarousel
+			ol.carousel-indicators
+				li.active(data-target="#myCarousel",data-slide-to="0")
+					One
+				li(data-target="#myCarousel",data-slide-to="1")
+					Two	
+			div.carousel-inner
+				div.active.item
+				div.item
+				div.item
+			a.carousel-control.left(href="#myCarousel", data-slide="prev") &lsaquo;
+			a.carousel-control.rigth(href="#myCarousel", data-slide="next") &rsaquo;
 	div.hero-unit#hero(data-karmaid='#{karma.id}',data-karmaname='#{karma.name}', data-karma="#{karma.score}", data-action="#{karma.action}")
-	h1= karma.name
-	p#score= karma.score
-	p#summary= karma.summary
-	button#upvote like
-	button#downvote dislike
+		h1= karma.name
+		p#score= karma.score
+		p#summary= karma.summary
+		button.btn.btn-primary.btn-large#upvote like
+		button.btn.btn-primary.btn-large.pull-right#downvote dislike
+	div.carousel.slide#childrenCarousel
+		ol.carousel-indicators
+			li.active(data-target="#childrenCarousel",data-slide-to="0")
+				One
+			li(data-target="#childrenCarousel",data-slide-to="1")
+				Two	
+		div.carousel-inner
+			div.active.item
+				div.hero-unit
+					h1 HELLO
+			div.item
+				div.hero-unit
+					h1 WORDL
+			div.item
+				div.hero-unit
+					h1 !
+			a.carousel-control.left(href="#childrenCarousel", data-slide="prev") &lsaquo;
+			a.carousel-control.rigth(href="#childrenCarousel", data-slide="next") &rsaquo;
+
+	block log
+		div#karmaLog
